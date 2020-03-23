@@ -26,6 +26,21 @@ int Normal = 92 ;
 long lastTime = 0; // this start at 0 *
 //  time between two loop *
 long exeRate = 500; //  decrease this to make the loop go faster *
+
+
+
+//Include always this code when using the pulsioximeter sensor
+//=========================================================================
+void readPulsioximeter(){  
+
+  cont ++;
+
+  if (cont == 50) { //Get only of one 50 measures to reduce the latency
+    eHealth.readPulsioximeter();  
+    cont = 0;
+  }
+}
+
 void setup() {
   //  Initilize serial port *
   Serial.begin(115200);
@@ -106,15 +121,3 @@ void loop() {
   //  delay(500); we don't use delay becuase it's stopping code execution *
 }
 
-
-//Include always this code when using the pulsioximeter sensor
-//=========================================================================
-void readPulsioximeter(){  
-
-  cont ++;
-
-  if (cont == 50) { //Get only of one 50 measures to reduce the latency
-    eHealth.readPulsioximeter();  
-    cont = 0;
-  }
-}
