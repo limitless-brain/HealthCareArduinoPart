@@ -39,7 +39,7 @@ void setup() {
   #endif
 
   //  Attach the inttruptions for using the pulsioximeter.   
-  //PCintPort::attachInterrupt(6, readPulsioximeter, RISING);
+  PCintPort::attachInterrupt(6, readPulsioximeter, RISING);
 
   //  Everthing take amount of time, so we record the time we take *
   lastTime = millis();  //  Storing the time take to execute the above code *
