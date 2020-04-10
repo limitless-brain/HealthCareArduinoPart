@@ -103,6 +103,7 @@ void loop() {
     BTModule.print(rate); //  *
     BTModule.print("o");  //  *
     BTModule.println(oxRate); //  *
+    //  TODO: ADD thermometter
     
     #else
     //  We are not using HW serial for debug *
